@@ -75,6 +75,7 @@ class _PageeState extends State<Pagee> {
                       height: heigh * 0.24,
                       width: widt * 0.89,
                       child: Card(
+                        color: Color(0xFF202020),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15.0),
                         ),
@@ -86,37 +87,43 @@ class _PageeState extends State<Pagee> {
                             width: widt * 0.3,
                             child: Image(image: AssetImage('assets/Image_created_with_a_mobile_phone.png.webp'),)),
 
-                        Column(
-                          children:<Widget> [ Text('Title',
-                          style: GoogleFonts.ptSans(
-                            textStyle: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 23,
+                        Expanded(
+                          child: Column(
+                            children:<Widget> [ Text('Title',
+                            style: GoogleFonts.ptSans(
+                              textStyle: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                fontSize: 23,
+                                color: Colors.white,
+                              ),
                             ),
+                            ),
+                              Text('Author',
+                                style: GoogleFonts.ptSans(
+                                  textStyle: TextStyle(
+                                    fontSize: 20,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                              Text('Source',
+                                style: GoogleFonts.ptSans(
+                                  textStyle: TextStyle(
+                                    fontSize: 20,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                              Text('Content',
+                                style: GoogleFonts.ptSans(
+                                  textStyle: TextStyle(
+                                    fontSize: 20,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                          ],
                           ),
-                          ),
-                            Text('Author',
-                              style: GoogleFonts.ptSans(
-                                textStyle: TextStyle(
-                                  fontSize: 20,
-                                ),
-                              ),
-                            ),
-                            Text('Source',
-                              style: GoogleFonts.ptSans(
-                                textStyle: TextStyle(
-                                  fontSize: 20,
-                                ),
-                              ),
-                            ),
-                            Text('Content',
-                              style: GoogleFonts.ptSans(
-                                textStyle: TextStyle(
-                                  fontSize: 20,
-                                ),
-                              ),
-                            ),
-                        ],
                         ),
                       ],
                     ),
@@ -129,6 +136,7 @@ class _PageeState extends State<Pagee> {
                     height: heigh * 0.25,
                     width: widt * 0.89,
                     child: Card(
+                      color: Color(0xFF202020),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15.0),
                       ),
@@ -140,10 +148,11 @@ class _PageeState extends State<Pagee> {
                               width: widt * 0.3,
                               child: Image(image: AssetImage('assets/Image_created_with_a_mobile_phone.png.webp'),)),
 
-                          Column(
+                         Expanded( child:Column(
                             children:<Widget> [ Text('Title',
                               style: GoogleFonts.ptSans(
                                 textStyle: TextStyle(
+                                  color: Colors.white,
                                   fontWeight: FontWeight.w600,
                                   fontSize: 23,
                                 ),
@@ -152,6 +161,7 @@ class _PageeState extends State<Pagee> {
                               Text('Author',
                                 style: GoogleFonts.ptSans(
                                   textStyle: TextStyle(
+                                    color: Colors.white,
                                     fontSize: 20,
                                   ),
                                 ),
@@ -159,6 +169,7 @@ class _PageeState extends State<Pagee> {
                               Text('Source',
                                 style: GoogleFonts.ptSans(
                                   textStyle: TextStyle(
+                                    color: Colors.white,
                                     fontSize: 20,
                                   ),
                                 ),
@@ -166,11 +177,13 @@ class _PageeState extends State<Pagee> {
                               Text('Content',
                                 style: GoogleFonts.ptSans(
                                   textStyle: TextStyle(
+                                    color: Colors.white,
                                     fontSize: 20,
                                   ),
                                 ),
                               ),
                             ],
+                         ),
                           ),
                         ],
                       ),
@@ -183,6 +196,7 @@ class _PageeState extends State<Pagee> {
                     height: heigh * 0.25,
                     width: widt * 0.89,
                     child: Card(
+                      color: Color(0xFF202020),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15.0),
                       ),
@@ -194,37 +208,43 @@ class _PageeState extends State<Pagee> {
                               width: widt * 0.3,
                               child: Image(image: AssetImage('assets/Image_created_with_a_mobile_phone.png.webp'),)),
 
-                          Column(
-                            children:<Widget> [ Text('Title',
-                              style: GoogleFonts.ptSans(
-                                textStyle: TextStyle(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 23,
+                          Expanded(
+                            child: Column(
+                              children:<Widget> [ Text('Title',
+                                style: GoogleFonts.ptSans(
+                                  textStyle: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 23,
+                                  ),
                                 ),
                               ),
+                                Text('Author',
+                                  style: GoogleFonts.ptSans(
+                                    textStyle: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 20,
+                                    ),
+                                  ),
+                                ),
+                                Text('Source',
+                                  style: GoogleFonts.ptSans(
+                                    textStyle: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 20,
+                                    ),
+                                  ),
+                                ),
+                                Text('Content',
+                                  style: GoogleFonts.ptSans(
+                                    textStyle: TextStyle(
+                                      fontSize: 20,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
-                              Text('Author',
-                                style: GoogleFonts.ptSans(
-                                  textStyle: TextStyle(
-                                    fontSize: 20,
-                                  ),
-                                ),
-                              ),
-                              Text('Source',
-                                style: GoogleFonts.ptSans(
-                                  textStyle: TextStyle(
-                                    fontSize: 20,
-                                  ),
-                                ),
-                              ),
-                              Text('Content',
-                                style: GoogleFonts.ptSans(
-                                  textStyle: TextStyle(
-                                    fontSize: 20,
-                                  ),
-                                ),
-                              ),
-                            ],
                           ),
                         ],
                       ),

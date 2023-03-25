@@ -10,16 +10,16 @@ class ApiProvider {
 
 
   Future<List<Newss>> fetchNews() async {
-    const url = 'https://newsapi.org/v2/everything?q=tesla&from=2023-02-24&sortBy=publishedAt&apiKey=001d18edc256499c941d90df4101c041';
+    const url = 'https://jsonplaceholder.typicode.com/todos';
     final uri = Uri.parse(url);
 
     final response = await http.get(uri);
     if (response.statusCode == 200) {
       final json = jsonDecode((response.body)) as List;
       final result = json.map((e) {
-        return Newss(author: e['articles'][0]['author'],
-          title: e['articles'][0]['title'],
-          description: e['articles'][0]['description'],);
+        return Newss(author: e['id'],
+          title: e['userId'],
+          description: e['completed'],);
       }).toList();
       return result;
     } else {

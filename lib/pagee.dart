@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -24,6 +25,7 @@ class _PageeState extends State<Pagee> {
   Widget build(BuildContext context) {
     double heigh = MediaQuery.of(context).size.height;
     double widt = MediaQuery.of(context).size.width;
+
     return Stack(
       children: <Widget>[
       Scaffold(
@@ -52,243 +54,240 @@ class _PageeState extends State<Pagee> {
           BlocBuilder<NewsCubit,NewsState>(
             builder:(context,state){
               if(state is InitNewsState|| state is LoadingNewsState){
+
+
                 return const Center(
                      child: CircularProgressIndicator(),
                 );
               }else if(state is ResponseNewsState)
                 {
+                  if (kDebugMode) {
+                    print('hello');
+                  }
                   final newss= state.newss;
-                  return Flexible(
-                    child: ListView.builder(
-                      shrinkWrap: true,
 
+                  return ListView.builder(
+                    
 
-                      itemBuilder: (context,index){
-                      final newsss= newss[index];
+                    itemCount: newss.length,
+                    itemBuilder: (context,index){
+                    final newsss= newss[index];
 
-                        Card(
-                          child: Center(
-                            child: SizedBox(
-                              height: heigh * 0.9,
+                      return Card(
+                        child: ListView(
+
+                          children: <Widget>[
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Top News',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 29,
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: widt*0.45,
+                                ),
+                                Column(
+                                  children: <Widget>[
+                                    Icon(Icons.search,
+                                      color: Colors.white,
+                                      size: 37,),
+
+                                  ],
+                                )
+                              ],
+                            ),
+                            SizedBox(
+                                height: heigh*0.05
+                            ),
+                            SizedBox(
+                              height: heigh * 0.24,
                               width: widt * 0.89,
+                              child: Card(
+                                color: Color(0xFF202020),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
+                                child:  Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    SizedBox(
+                                        height: heigh*0.5,
+                                        width: widt * 0.3,
+                                        child: Image(image: AssetImage('assets/images.jpg'),)),
 
-                              child: ListView(
-
-                                children: <Widget>[
-                                  Row(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'Top News',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 29,
+                                    Expanded(
+                                      child: Column(
+                                        children:<Widget> [ Text("totle",
+                                          style: GoogleFonts.ptSans(
+                                            textStyle: TextStyle(
+                                              fontWeight: FontWeight.w600,
+                                              fontSize: 23,
+                                              color: Colors.white,
+                                            ),
+                                          ),
                                         ),
-                                      ),
-                                      SizedBox(
-                                        width: widt*0.45,
-                                      ),
-                                      Column(
-                                        children: <Widget>[
-                                          Icon(Icons.search,
-                                            color: Colors.white,
-                                            size: 37,),
-
-                                        ],
-                                      )
-                                    ],
-                                  ),
-                                  SizedBox(
-                                      height: heigh*0.05
-                                  ),
-                                  SizedBox(
-                                    height: heigh * 0.24,
-                                    width: widt * 0.89,
-                                    child: Card(
-                                      color: Color(0xFF202020),
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(15.0),
-                                      ),
-                                      child:  Row(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: <Widget>[
-                                          SizedBox(
-                                              height: heigh*0.5,
-                                              width: widt * 0.3,
-                                              child: Image(image: AssetImage('assets/images.jpg'),)),
-
-                                          Expanded(
-                                            child: Column(
-                                              children:<Widget> [ Text("totle",
-                                                style: GoogleFonts.ptSans(
-                                                  textStyle: TextStyle(
-                                                    fontWeight: FontWeight.w600,
-                                                    fontSize: 23,
-                                                    color: Colors.white,
-                                                  ),
-                                                ),
+                                          Text('Author',
+                                            style: GoogleFonts.ptSans(
+                                              textStyle: TextStyle(
+                                                fontSize: 20,
+                                                color: Colors.white,
                                               ),
-                                                Text('Author',
-                                                  style: GoogleFonts.ptSans(
-                                                    textStyle: TextStyle(
-                                                      fontSize: 20,
-                                                      color: Colors.white,
-                                                    ),
-                                                  ),
-                                                ),
-                                                Text('Source',
-                                                  style: GoogleFonts.ptSans(
-                                                    textStyle: TextStyle(
-                                                      fontSize: 20,
-                                                      color: Colors.white,
-                                                    ),
-                                                  ),
-                                                ),
-                                                Text('Content',
-                                                  style: GoogleFonts.ptSans(
-                                                    textStyle: TextStyle(
-                                                      fontSize: 20,
-                                                      color: Colors.white,
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
+                                            ),
+                                          ),
+                                          Text('Source',
+                                            style: GoogleFonts.ptSans(
+                                              textStyle: TextStyle(
+                                                fontSize: 20,
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                          ),
+                                          Text('Content',
+                                            style: GoogleFonts.ptSans(
+                                              textStyle: TextStyle(
+                                                fontSize: 20,
+                                                color: Colors.white,
+                                              ),
                                             ),
                                           ),
                                         ],
                                       ),
                                     ),
-                                  ),
-                                  SizedBox(
-                                      height: heigh*0.05
-                                  ),
-                                  SizedBox(
-                                    height: heigh * 0.25,
-                                    width: widt * 0.89,
-                                    child: Card(
-                                      color: Color(0xFF202020),
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(15.0),
-                                      ),
-                                      child:  Row(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: <Widget>[
-                                          SizedBox(
-                                              height: heigh*0.6,
-                                              width: widt * 0.3,
-                                              child: Image(image: AssetImage('assets/Image_created_with_a_mobile_phone.png.webp'),)),
-
-                                          Expanded( child:Column(
-                                            children:<Widget> [ Text('Title',
-                                              style: GoogleFonts.ptSans(
-                                                textStyle: TextStyle(
-                                                  color: Colors.white,
-                                                  fontWeight: FontWeight.w600,
-                                                  fontSize: 23,
-                                                ),
-                                              ),
-                                            ),
-                                              Text('Author',
-                                                style: GoogleFonts.ptSans(
-                                                  textStyle: TextStyle(
-                                                    color: Colors.white,
-                                                    fontSize: 20,
-                                                  ),
-                                                ),
-                                              ),
-                                              Text('Source',
-                                                style: GoogleFonts.ptSans(
-                                                  textStyle: TextStyle(
-                                                    color: Colors.white,
-                                                    fontSize: 20,
-                                                  ),
-                                                ),
-                                              ),
-                                              Text('Content',
-                                                style: GoogleFonts.ptSans(
-                                                  textStyle: TextStyle(
-                                                    color: Colors.white,
-                                                    fontSize: 20,
-                                                  ),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                      height: heigh*0.05
-                                  ),
-                                  SizedBox(
-                                    height: heigh * 0.25,
-                                    width: widt * 0.89,
-                                    child: Card(
-                                      color: Color(0xFF202020),
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(15.0),
-                                      ),
-                                      child:  Row(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: <Widget>[
-                                          SizedBox(
-                                              height: heigh*0.6,
-                                              width: widt * 0.3,
-                                              child: Image(image: AssetImage('assets/Image_created_with_a_mobile_phone.png.webp'),)),
-
-                                          Expanded(
-                                            child: Column(
-                                              children:<Widget> [ Text('Title',
-                                                style: GoogleFonts.ptSans(
-                                                  textStyle: TextStyle(
-                                                    color: Colors.white,
-                                                    fontWeight: FontWeight.w600,
-                                                    fontSize: 23,
-                                                  ),
-                                                ),
-                                              ),
-                                                Text('Author',
-                                                  style: GoogleFonts.ptSans(
-                                                    textStyle: TextStyle(
-                                                      color: Colors.white,
-                                                      fontSize: 20,
-                                                    ),
-                                                  ),
-                                                ),
-                                                Text('Source',
-                                                  style: GoogleFonts.ptSans(
-                                                    textStyle: TextStyle(
-                                                      color: Colors.white,
-                                                      fontSize: 20,
-                                                    ),
-                                                  ),
-                                                ),
-                                                Text('Content',
-                                                  style: GoogleFonts.ptSans(
-                                                    textStyle: TextStyle(
-                                                      fontSize: 20,
-                                                      color: Colors.white,
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
-                          ),
-                        );
+                            SizedBox(
+                                height: heigh*0.05
+                            ),
+                            SizedBox(
+                              height: heigh * 0.25,
+                              width: widt * 0.89,
+                              child: Card(
+                                color: Color(0xFF202020),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
+                                child:  Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    SizedBox(
+                                        height: heigh*0.6,
+                                        width: widt * 0.3,
+                                        child: Image(image: AssetImage('assets/Image_created_with_a_mobile_phone.png.webp'),)),
 
-                      },
-                    ),
+                                    Expanded( child:Column(
+                                      children:<Widget> [ Text('Title',
+                                        style: GoogleFonts.ptSans(
+                                          textStyle: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w600,
+                                            fontSize: 23,
+                                          ),
+                                        ),
+                                      ),
+                                        Text('Author',
+                                          style: GoogleFonts.ptSans(
+                                            textStyle: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 20,
+                                            ),
+                                          ),
+                                        ),
+                                        Text('Source',
+                                          style: GoogleFonts.ptSans(
+                                            textStyle: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 20,
+                                            ),
+                                          ),
+                                        ),
+                                        Text('Content',
+                                          style: GoogleFonts.ptSans(
+                                            textStyle: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 20,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                                height: heigh*0.05
+                            ),
+                            SizedBox(
+                              height: heigh * 0.25,
+                              width: widt * 0.89,
+                              child: Card(
+                                color: Color(0xFF202020),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
+                                child:  Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    SizedBox(
+                                        height: heigh*0.6,
+                                        width: widt * 0.3,
+                                        child: Image(image: AssetImage('assets/Image_created_with_a_mobile_phone.png.webp'),)),
+
+                                    Expanded(
+                                      child: Column(
+                                        children:<Widget> [ Text('Title',
+                                          style: GoogleFonts.ptSans(
+                                            textStyle: TextStyle(
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.w600,
+                                              fontSize: 23,
+                                            ),
+                                          ),
+                                        ),
+                                          Text('Author',
+                                            style: GoogleFonts.ptSans(
+                                              textStyle: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 20,
+                                              ),
+                                            ),
+                                          ),
+                                          Text('Source',
+                                            style: GoogleFonts.ptSans(
+                                              textStyle: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 20,
+                                              ),
+                                            ),
+                                          ),
+                                          Text('Content',
+                                            style: GoogleFonts.ptSans(
+                                              textStyle: TextStyle(
+                                                fontSize: 20,
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+
+                          ],
+                        ),
+                      );
+
+                    },
                   );
                 }
 

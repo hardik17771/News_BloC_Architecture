@@ -83,9 +83,9 @@ class _PageeState extends State<Pagee> {
                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         SizedBox(
-                          height: heigh*0.6,
+                          height: heigh*0.5,
                             width: widt * 0.3,
-                            child: Image(image: AssetImage('assets/Image_created_with_a_mobile_phone.png.webp'),)),
+                            child: Image(image: AssetImage('assets/images.jpg'),)),
 
                         Expanded(
                           child: Column(

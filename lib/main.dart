@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:health_hack_app/repository/api.dart';
+import 'package:health_hack_app/state/cubitt.dart';
 import 'pagee.dart';
-import 'app_state.dart';
+
 
 void main() => runApp(const HomePage());
     
@@ -16,7 +18,12 @@ void main() => runApp(const HomePage());
       @override
       Widget build(BuildContext context) {
         return BlocProvider(
-            create: (context) => NewsCubit(ApiP)
-        ),}
+          create: (context) => NewsCubit(ApiProvider()),
+          child: const MaterialApp(
+            home: Pagee(),
+          ),
+
+        );
+      }
     }
     

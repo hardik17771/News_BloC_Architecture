@@ -29,6 +29,34 @@ class _PageeState extends State<Pagee> {
     return Stack(
       children: <Widget>[
       Scaffold(
+        appBar:
+        AppBar(
+          backgroundColor: Colors.black54,
+          elevation: 2,
+          title:  Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Top News',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 32,
+                ),
+              ),
+              SizedBox(
+                width: widt*0.45,
+              ),
+              Column(
+                children: <Widget>[
+                  Icon(Icons.search,
+                    color: Colors.white,
+                    size: 37,),
+
+                ],
+              )
+            ],
+          ),
+        ),
         bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
@@ -69,35 +97,13 @@ class _PageeState extends State<Pagee> {
                   return ListView.builder(
 
 
-                    itemCount: newss.length,
+                    itemCount: 12,
                     itemBuilder: (context,index){
                     final newsss= newss[index];
 
                      return Column(
                        children: [
-                         Row(
-                           crossAxisAlignment: CrossAxisAlignment.start,
-                           children: [
-                             Text(
-                               'Top News',
-                               style: TextStyle(
-                                 color: Colors.white,
-                                 fontSize: 29,
-                               ),
-                             ),
-                             SizedBox(
-                               width: widt*0.45,
-                             ),
-                             Column(
-                               children: <Widget>[
-                                 Icon(Icons.search,
-                                   color: Colors.white,
-                                   size: 37,),
 
-                               ],
-                             )
-                           ],
-                         ),
                          SizedBox(
                              height: heigh*0.05
                          ),
@@ -159,127 +165,127 @@ class _PageeState extends State<Pagee> {
                              ),
                            ),
                          ),
-                         SizedBox(
-                             height: heigh*0.05
-                         ),
-                         SizedBox(
-                           height: heigh * 0.25,
-                           width: widt * 0.89,
-                           child: Card(
-                             color: Color(0xFF202020),
-                             shape: RoundedRectangleBorder(
-                               borderRadius: BorderRadius.circular(15.0),
-                             ),
-                             child:  Row(
-                               crossAxisAlignment: CrossAxisAlignment.start,
-                               children: <Widget>[
-                                 SizedBox(
-                                     height: heigh*0.6,
-                                     width: widt * 0.3,
-                                     child: Image.network(newsss.img_url)),
-
-                                 Expanded( child:ListView(
-                                   children:<Widget> [ Text(newsss.title,
-                                     style: GoogleFonts.ptSans(
-                                       textStyle: TextStyle(
-                                         color: Colors.white,
-                                         fontWeight: FontWeight.w600,
-                                         fontSize: 20,
-                                       ),
-                                     ),
-                                   ),
-                                     Text(newsss.author,
-                                       style: GoogleFonts.ptSans(
-                                         textStyle: TextStyle(
-                                           color: Colors.white,
-                                           fontSize: 17,
-                                         ),
-                                       ),
-                                     ),
-                                     Text(newsss.description,
-                                       style: GoogleFonts.ptSans(
-                                         textStyle: TextStyle(
-                                           color: Colors.white,
-                                           fontSize: 17,
-                                         ),
-                                       ),
-                                     ),
-                                     // Text('Content',
-                                     //   style: GoogleFonts.ptSans(
-                                     //     textStyle: TextStyle(
-                                     //       color: Colors.white,
-                                     //       fontSize: 20,
-                                     //     ),
-                                     //   ),
-                                     // ),
-                                   ],
-                                 ),
-                                 ),
-                               ],
-                             ),
-                           ),
-                         ),
-                         SizedBox(
-                             height: heigh*0.05
-                         ),
-                         SizedBox(
-                           height: heigh * 0.25,
-                           width: widt * 0.89,
-                           child: Card(
-                             color: Color(0xFF202020),
-                             shape: RoundedRectangleBorder(
-                               borderRadius: BorderRadius.circular(15.0),
-                             ),
-                             child:  Row(
-                               crossAxisAlignment: CrossAxisAlignment.start,
-                               children: <Widget>[
-                                 SizedBox(
-                                     height: heigh*0.6,
-                                     width: widt * 0.3,
-                                     child: Image.network(newsss.img_url)),
-
-                                 Expanded(
-                                   child: ListView(
-                                     children:<Widget> [ Text(newsss.title,
-                                       style: GoogleFonts.ptSans(
-                                         textStyle: TextStyle(
-                                           color: Colors.white,
-                                           fontWeight: FontWeight.w600,
-                                           fontSize: 20,
-                                         ),
-                                       ),
-                                     ),
-                                       Text(newsss.author,
-                                         style: GoogleFonts.ptSans(
-                                           textStyle: TextStyle(
-                                             color: Colors.white,
-                                             fontSize: 17,
-                                           ),
-                                         ),
-                                       ),
-                                       Text(newsss.description,
-                                         style: GoogleFonts.ptSans(
-                                           textStyle: TextStyle(
-                                             color: Colors.white,
-                                             fontSize: 17,
-                                           ),
-                                         ),
-                                       ),
-                                       // Text('Content',
-                                       //   style: GoogleFonts.ptSans(
-                                       //     textStyle: TextStyle(
-                                       //       fontSize: 20,
-                                       //       color: Colors.white,
-                                       //     ),
-                                       //   ),
-                                       // ),
-                                     ],
-                                   ),
-                                 ),
-                               ],
-                             ),
-                           ),
-                         ),
+                         // SizedBox(
+                         //     height: heigh*0.05
+                         // ),
+                         // SizedBox(
+                         //   height: heigh * 0.25,
+                         //   width: widt * 0.89,
+                         //   child: Card(
+                         //     color: Color(0xFF202020),
+                         //     shape: RoundedRectangleBorder(
+                         //       borderRadius: BorderRadius.circular(15.0),
+                         //     ),
+                         //     child:  Row(
+                         //       crossAxisAlignment: CrossAxisAlignment.start,
+                         //       children: <Widget>[
+                         //         SizedBox(
+                         //             height: heigh*0.6,
+                         //             width: widt * 0.3,
+                         //             child: Image.network(newsss.img_url)),
+                         //
+                         //         Expanded( child:ListView(
+                         //           children:<Widget> [ Text(newsss.title,
+                         //             style: GoogleFonts.ptSans(
+                         //               textStyle: TextStyle(
+                         //                 color: Colors.white,
+                         //                 fontWeight: FontWeight.w600,
+                         //                 fontSize: 20,
+                         //               ),
+                         //             ),
+                         //           ),
+                         //             Text(newsss.author,
+                         //               style: GoogleFonts.ptSans(
+                         //                 textStyle: TextStyle(
+                         //                   color: Colors.white,
+                         //                   fontSize: 17,
+                         //                 ),
+                         //               ),
+                         //             ),
+                         //             Text(newsss.description,
+                         //               style: GoogleFonts.ptSans(
+                         //                 textStyle: TextStyle(
+                         //                   color: Colors.white,
+                         //                   fontSize: 17,
+                         //                 ),
+                         //               ),
+                         //             ),
+                         //             // Text('Content',
+                         //             //   style: GoogleFonts.ptSans(
+                         //             //     textStyle: TextStyle(
+                         //             //       color: Colors.white,
+                         //             //       fontSize: 20,
+                         //             //     ),
+                         //             //   ),
+                         //             // ),
+                         //           ],
+                         //         ),
+                         //         ),
+                         //       ],
+                         //     ),
+                         //   ),
+                         // ),
+                         // SizedBox(
+                         //     height: heigh*0.05
+                         // ),
+                         // SizedBox(
+                         //   height: heigh * 0.25,
+                         //   width: widt * 0.89,
+                         //   child: Card(
+                         //     color: Color(0xFF202020),
+                         //     shape: RoundedRectangleBorder(
+                         //       borderRadius: BorderRadius.circular(15.0),
+                         //     ),
+                         //     child:  Row(
+                         //       crossAxisAlignment: CrossAxisAlignment.start,
+                         //       children: <Widget>[
+                         //         SizedBox(
+                         //             height: heigh*0.6,
+                         //             width: widt * 0.3,
+                         //             child: Image.network(newsss.img_url)),
+                         //
+                         //         Expanded(
+                         //           child: ListView(
+                         //             children:<Widget> [ Text(newsss.title,
+                         //               style: GoogleFonts.ptSans(
+                         //                 textStyle: TextStyle(
+                         //                   color: Colors.white,
+                         //                   fontWeight: FontWeight.w600,
+                         //                   fontSize: 20,
+                         //                 ),
+                         //               ),
+                         //             ),
+                         //               Text(newsss.author,
+                         //                 style: GoogleFonts.ptSans(
+                         //                   textStyle: TextStyle(
+                         //                     color: Colors.white,
+                         //                     fontSize: 17,
+                         //                   ),
+                         //                 ),
+                         //               ),
+                         //               Text(newsss.description,
+                         //                 style: GoogleFonts.ptSans(
+                         //                   textStyle: TextStyle(
+                         //                     color: Colors.white,
+                         //                     fontSize: 17,
+                         //                   ),
+                         //                 ),
+                         //               ),
+                         //               // Text('Content',
+                         //               //   style: GoogleFonts.ptSans(
+                         //               //     textStyle: TextStyle(
+                         //               //       fontSize: 20,
+                         //               //       color: Colors.white,
+                         //               //     ),
+                         //               //   ),
+                         //               // ),
+                         //             ],
+                         //           ),
+                         //         ),
+                         //       ],
+                         //     ),
+                         //   ),
+                         // ),
                        ],
                      );
 

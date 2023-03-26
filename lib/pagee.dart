@@ -67,7 +67,7 @@ class _PageeState extends State<Pagee> {
                   final newss= state.newss;
 
                   return ListView.builder(
-                    
+
 
                     itemCount: newss.length,
                     itemBuilder: (context,index){
@@ -118,28 +118,28 @@ class _PageeState extends State<Pagee> {
                                      child: Image(image: AssetImage('assets/images.jpg'),)),
 
                                  Expanded(
-                                   child: Column(
-                                     children:<Widget> [ Text(newsss.title.toString(),
+                                   child: ListView(
+                                     children:<Widget> [ Text(newsss.title,
                                        style: GoogleFonts.ptSans(
                                          textStyle: TextStyle(
                                            fontWeight: FontWeight.w600,
-                                           fontSize: 23,
+                                           fontSize: 20,
                                            color: Colors.white,
                                          ),
                                        ),
                                      ),
-                                       Text(newsss.author.toString(),
+                                       Text(newsss.author,
                                          style: GoogleFonts.ptSans(
                                            textStyle: TextStyle(
-                                             fontSize: 20,
+                                             fontSize: 17,
                                              color: Colors.white,
                                            ),
                                          ),
                                        ),
-                                       Text(newsss.description.toString(),
+                                       Text(newsss.description,
                                          style: GoogleFonts.ptSans(
                                            textStyle: TextStyle(
-                                             fontSize: 20,
+                                             fontSize: 17,
                                              color: Colors.white,
                                            ),
                                          ),
@@ -178,29 +178,29 @@ class _PageeState extends State<Pagee> {
                                      width: widt * 0.3,
                                      child: Image(image: AssetImage('assets/Image_created_with_a_mobile_phone.png.webp'),)),
 
-                                 Expanded( child:Column(
-                                   children:<Widget> [ Text(newsss.title.toString(),
+                                 Expanded( child:ListView(
+                                   children:<Widget> [ Text(newsss.title,
                                      style: GoogleFonts.ptSans(
                                        textStyle: TextStyle(
                                          color: Colors.white,
                                          fontWeight: FontWeight.w600,
-                                         fontSize: 23,
+                                         fontSize: 20,
                                        ),
                                      ),
                                    ),
-                                     Text(newsss.author.toString(),
+                                     Text(newsss.author,
                                        style: GoogleFonts.ptSans(
                                          textStyle: TextStyle(
                                            color: Colors.white,
-                                           fontSize: 20,
+                                           fontSize: 17,
                                          ),
                                        ),
                                      ),
-                                     Text(newsss.description.toString(),
+                                     Text(newsss.description,
                                        style: GoogleFonts.ptSans(
                                          textStyle: TextStyle(
                                            color: Colors.white,
-                                           fontSize: 20,
+                                           fontSize: 17,
                                          ),
                                        ),
                                      ),
@@ -239,29 +239,29 @@ class _PageeState extends State<Pagee> {
                                      child: Image(image: AssetImage('assets/Image_created_with_a_mobile_phone.png.webp'),)),
 
                                  Expanded(
-                                   child: Column(
-                                     children:<Widget> [ Text(newsss.title.toString(),
+                                   child: ListView(
+                                     children:<Widget> [ Text(newsss.title,
                                        style: GoogleFonts.ptSans(
                                          textStyle: TextStyle(
                                            color: Colors.white,
                                            fontWeight: FontWeight.w600,
-                                           fontSize: 23,
+                                           fontSize: 20,
                                          ),
                                        ),
                                      ),
-                                       Text(newsss.author.toString(),
+                                       Text(newsss.author,
                                          style: GoogleFonts.ptSans(
                                            textStyle: TextStyle(
                                              color: Colors.white,
-                                             fontSize: 20,
+                                             fontSize: 17,
                                            ),
                                          ),
                                        ),
-                                       Text(newsss.description.toString(),
+                                       Text(newsss.description,
                                          style: GoogleFonts.ptSans(
                                            textStyle: TextStyle(
                                              color: Colors.white,
-                                             fontSize: 20,
+                                             fontSize: 17,
                                            ),
                                          ),
                                        ),

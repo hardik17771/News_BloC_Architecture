@@ -10,16 +10,18 @@ class ApiProvider {
 
 
   Future<List<Newss>> fetchNews() async {
-    const url = 'https://newsapi.org/v2/everything?q=tesla&from=2023-02-25&sortBy=publishedAt&apiKey=001d18edc256499c941d90df4101c041';
+    const url = 'https://newsapi.org/v2/everything?q=tesla&from=2023-02-26&sortBy=publishedAt&apiKey=001d18edc256499c941d90df4101c041';
     final uri = Uri.parse(url);
 
     final response = await http.get(uri);
     if (response.statusCode == 200) {
-      final json = jsonDecode((response.body)) as List;
+      final json = jsonDecode(response.body)['articles'] as List;
       final result = json.map((e) {
-        return Newss(author: e(['articles']),
-          title: e(['articles']),
-          description: e(['articles']));
+        return Newss(
+          author: e['author'] ?? '',
+          title: e['title'] ?? '',
+          description: e['description'] ?? '',
+        );
       }).toList();
       return result;
     } else {

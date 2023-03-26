@@ -1,7 +1,7 @@
 class Newss {
-  late final int author;
-  late final int title;
-  late final bool description;
+  late final String author;
+  late final String title;
+  late final String description;
 
   Newss({
     required this.author,

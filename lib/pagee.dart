@@ -115,7 +115,7 @@ class _PageeState extends State<Pagee> {
                                  SizedBox(
                                      height: heigh*0.5,
                                      width: widt * 0.3,
-                                     child: Image(image: AssetImage('assets/images.jpg'),)),
+                                     child: Image.network(newsss.img_url)),
 
                                  Expanded(
                                    child: ListView(
@@ -176,7 +176,7 @@ class _PageeState extends State<Pagee> {
                                  SizedBox(
                                      height: heigh*0.6,
                                      width: widt * 0.3,
-                                     child: Image(image: AssetImage('assets/Image_created_with_a_mobile_phone.png.webp'),)),
+                                     child: Image.network(newsss.img_url)),
 
                                  Expanded( child:ListView(
                                    children:<Widget> [ Text(newsss.title,
@@ -236,7 +236,7 @@ class _PageeState extends State<Pagee> {
                                  SizedBox(
                                      height: heigh*0.6,
                                      width: widt * 0.3,
-                                     child: Image(image: AssetImage('assets/Image_created_with_a_mobile_phone.png.webp'),)),
+                                     child: Image.network(newsss.img_url)),
 
                                  Expanded(
                                    child: ListView(

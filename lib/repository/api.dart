@@ -18,6 +18,7 @@ class ApiProvider {
       final json = jsonDecode(response.body)['articles'] as List;
       final result = json.map((e) {
         return Newss(
+          img_url: e['urlToImage'] ?? '',
           author: e['author'] ?? '',
           title: e['title'] ?? '',
           description: e['description'] ?? '',

@@ -1,4 +1,4 @@
-# health_hack_app
+# flutter_news_bloc
 
 A new Flutter project.
 

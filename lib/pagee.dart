@@ -58,22 +58,41 @@ class _PageeState extends State<Pagee> {
           ),
         ),
         bottomNavigationBar: BottomNavigationBar(
+
+          backgroundColor: Colors.black26,
+
           items: const <BottomNavigationBarItem>[
+
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
+
+              icon: Icon(Icons.home,
+              color: Colors.white60,),
               label: 'Home',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.business),
-              label: 'Business',
+              icon: Icon(Icons.search,
+                color: Colors.white60,),
+              label: 'Search ',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.school),
-              label: 'School',
+              icon: Icon(Icons.manage_accounts,
+                color: Colors.white60,
+              ),
+              label: 'Profile',
+
             ),
           ],
-
-          selectedItemColor: Colors.amber[800],
+          showUnselectedLabels: true,
+          unselectedIconTheme: IconThemeData(
+            color: Colors.white60,
+          ),
+          unselectedLabelStyle: const TextStyle(
+            color: Colors.white60,
+          ),
+          selectedLabelStyle: const TextStyle(
+            color: Colors.white60,
+          ),
+          selectedItemColor: Colors.white,
 
         ),
         backgroundColor: Colors.black87,
